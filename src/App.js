@@ -1,55 +1,38 @@
-import axios from 'axios';
+import {Routes, Route } from 'react-router-dom';
 import './App.css';
-import { React, useState, useEffect } from 'react';
-import AccountForm from './accountForm';
+import { React, useState } from 'react';
+import HomePage from './Home/HomePage';
+import LoginPage from './auth/LoginPage';
+import NotFound from './NotFound';
+import Navbar from './navbar/navbar';
+import HomeLoanPage from './Loan/HomeLoan/HomeLoanPage';
+import EducationLoanPage from './Loan/EducationLoan/EducationLoanPage';
+import Logout from './auth/LogoutPage';
+import ProfilePage from './auth/ProfilePage';
+import RegisterPage from './auth/RegisterPage';
+import TransactionHistory from './Transaction/History';
+import TransferAmount from './Transaction/Transfer';
 
 const App = () =>{
 
-  const [userData, setUserData] = useState(null);
-
-  const componentDidMount=() =>{
-    // console.log('hello'); 
-  };
-
-  useEffect(()=>{
-    let data;
-    axios.get('http://localhost:8000/api/userdetail/123456789100/').then((res)=>{
-      setUserData(res.data)
-      console.log(res);
-    }).catch((err)=>{
-      console.log('hello world');
-      if (err.response) {
-        // The request was made and the server responded with a status code
-        console.log('Server responded with error:', err.response.data);
-        console.log('Status code:', err.response.status);
-      } else if (err.request) {
-        // The request was made but no response was received
-        console.log('No response received:', err.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log('Error:', err.message);
-      }
-    }); 
-  },[]);
-  
+  const [loggedIn, setloggedIn] = useState(false)
+  const [Profile, setProfile] = useState({})
 
   return (
     <div className="contaienr">
-      <h1>Hello World</h1>
-      <div>
-        <AccountForm/>
-      </div>
-      <div>
-        <h1>User Details</h1>
-        {userData && (
-          <div>
-            <img src={userData.profile_image} alt="User" /> {/* Assuming 'image' is the key containing the image URL */}
-            <p>Name: {userData.name}</p>
-            <p>Email: {userData.email}</p>
-            {/* Add more user details as needed */}
-          </div>
-        )}
-      </div>
+      <Navbar loggedIn={loggedIn}/>
+      <Routes>
+          <Route exact path="/" element = {<HomePage loggedIn={loggedIn} />} />
+          <Route path="/login" element = {<LoginPage loggedIn={loggedIn} setloggedIn={setloggedIn} Profile={Profile} setProfile={setProfile}/>} />
+          <Route path="/register" element = {<RegisterPage loggedIn={loggedIn} setloggedIn={setloggedIn} setProfile={setProfile}/>} />
+          <Route path="/logout" element = {<Logout loggedIn={loggedIn} setloggedIn={setloggedIn} Profile={Profile}/>} />
+          <Route path="/profile" element = {<ProfilePage loggedIn={loggedIn} setloggedIn={setloggedIn} Profile={Profile} />} />
+          <Route path="/homeLoan" element = {<HomeLoanPage loggedIn={loggedIn} Profile={Profile}/>} />
+          <Route path="/educationLoan" element = {<EducationLoanPage loggedIn={loggedIn} Profile={Profile}/>} />
+          <Route path="/transfer_amount" element = {<TransferAmount loggedIn={loggedIn} Profile={Profile}/>} />
+          <Route path="/transaction_history" element = {<TransactionHistory loggedIn={loggedIn} Profile={Profile}/>} />
+          <Route component={NotFound} />
+      </Routes>
     </div>
     
   )

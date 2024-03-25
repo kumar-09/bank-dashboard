@@ -1,0 +1,104 @@
+/* HomePage.css */
+
+.home-page {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(238, 237, 237);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .service {
+    flex: 0 0 calc(33.333% - 20px);
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .service h2 {
+    color: #333;
+  }
+  
+  .service p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .service button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .service button:hover {
+    background-color: #0056b3;
+  }
+  
+  .features {
+    margin-bottom: 40px;
+  }
+  
+  .features h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .features li {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .contact {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .contact button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact button:hover {
+    background-color: #218838;
+  }
+  
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #666;
+  }
+  

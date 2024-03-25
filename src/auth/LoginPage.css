@@ -1,0 +1,104 @@
+/* LoginPage.css */
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* Background color of the page */
+}
+
+.login-container {
+  width: 400px;
+  background-color: #fff; /* Background color of the login container */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+}
+
+.login-header {
+  padding: 20px;
+  text-align: center;
+  background-color: #007bff; /* Header background color */
+  color: #fff; /* Header text color */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.login-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: calc(100% - 40px); /* Adjust width to accommodate eye icon */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.captcha-container {
+  display: flex;
+  align-items: center;
+}
+
+.captcha {
+  display: flex;
+  margin-right: 10px;
+}
+
+.captcha-char {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Button background color on hover */
+}
+
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+  .login-container {
+    width: 70%; /* Adjusted width for larger screens */
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .login-container {
+    width: 50%; /* Adjusted width for even larger screens */
+  }
+}

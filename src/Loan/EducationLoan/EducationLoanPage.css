@@ -1,0 +1,77 @@
+.education-loan-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .loan-info {
+    width: 60%;
+  }
+  
+  .edu-loan-form {
+    width: 35%;
+  }
+  
+  .loan-schemes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .scheme {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .common-image {
+    width: 90%;
+    margin-top: 20px;
+    text-align: center;
+  }        
+  .common-image img {
+    max-width: 90%;
+  }                    
+  
+  @media screen and (max-width: 768px) {
+    .education-loan-page {
+      flex-direction: column;
+    }
+    .loan-info,
+    .edu-loan-form {
+      width: 100%;
+    }
+  }
+  
