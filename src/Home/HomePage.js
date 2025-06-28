@@ -9,7 +9,7 @@ function HomePage(props) {
   return (
     <div className="home-page">
       <header className="header">
-        <h1>Welcome to Pirate Bank of Treasure Island in india</h1>
+        <h1>Welcome to Pirate Bank of Treasure Island in India</h1>
         <p>Your trusted financial partner</p>
       </header>
       <section className="services">
